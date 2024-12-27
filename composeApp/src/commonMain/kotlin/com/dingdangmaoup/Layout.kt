@@ -14,10 +14,15 @@ import androidx.compose.ui.focus.focusModifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.icons.filled.Close
+import kotlinx.coroutines.launch
+
 @Composable
 fun MyLayout() {
-    var falg by remember { mutableStateOf(false) }
+    val scaffoldState = rememberScaffoldState()
+    val scope=rememberCoroutineScope()
     Scaffold(
+        scaffoldState=scaffoldState,
         topBar = {
             TopAppBar (
             ){
@@ -44,7 +49,11 @@ fun MyLayout() {
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-                    falg=true
+                    scope.launch {
+                        scaffoldState.drawerState.apply {
+                            if (isClosed) open()else close()
+                        }
+                    }
                 }
             ){
                 Icon(
@@ -54,12 +63,30 @@ fun MyLayout() {
                 )
             }
         },
-        isFloatingActionButtonDocked = true
+        isFloatingActionButtonDocked = true,
+        drawerContent = {
+                    Text("ok")
+           Button(
+               onClick = {
+                   scope.launch {
+                       scaffoldState.drawerState.apply {
+                           if (isClosed) open()else close()
+                       }
+                   }
+               }
+           ){
+               Icon(
+                   imageVector = Icons.Filled.Close,
+                   contentDescription = "close",
+               )
+           }
+
+        },
+        drawerGesturesEnabled = false
     ) {
         // Screen content
         Button(
             onClick = {
-                falg = true
 
             },
         ) {
