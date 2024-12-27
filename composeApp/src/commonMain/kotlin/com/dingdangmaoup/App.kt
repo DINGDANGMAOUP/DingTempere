@@ -7,6 +7,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -26,7 +28,16 @@ data class Message(val author: String, val body: String)
 
 @Composable
 fun converation(messages: List<Message>) {
-
+//    ExtendedFloatingActionButton(
+//        onClick = { /* ... */ },
+//        icon = {
+//            Icon(
+//                Icons.Filled.Favorite,
+//                contentDescription = "Favorite"
+//            )
+//        },
+//        text = { Text("Like") }
+//    )
     LazyColumn {
         items(messages) { message ->
             MessageCard(message)
@@ -47,8 +58,9 @@ fun getMsgData(num: Int): List<Message> {
 @Preview
 fun App() {
     DingTempereTheme {
-        val msgData = getMsgData(100)
-        converation(msgData)
+    MyLayout()
+//        val msgData = getMsgData(100)
+//        converation(msgData)
 //        MessageCard(Message("dingdangmaoup","hello everyone"))
 //        var showContent by remember { mutableStateOf(false) }
 //        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
