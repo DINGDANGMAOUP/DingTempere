@@ -22,6 +22,10 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 import dingtempere.composeapp.generated.resources.Res
 import dingtempere.composeapp.generated.resources.compose_multiplatform
+import io.ktor.client.*
+import io.ktor.client.request.*
+import io.ktor.client.utils.EmptyContent.contentType
+import io.ktor.http.*
 
 
 data class Message(val author: String, val body: String)

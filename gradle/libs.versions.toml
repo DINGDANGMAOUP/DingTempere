@@ -41,6 +41,8 @@ ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+#     implementation("io.ktor:ktor-server-rate-limit:$ktor_version")
+ktor-server-rate-limit={module="io.ktor:ktor-server-rate-limit",version.ref="ktor"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
