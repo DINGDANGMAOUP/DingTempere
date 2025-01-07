@@ -19,12 +19,24 @@ fun Application.module() {
         register {
             rateLimiter(limit = 5, refillPeriod = 60.seconds)
         }
+        register(RateLimitName("api-v1")){
+            rateLimiter(limit = 5, refillPeriod = 60.seconds)
+        }
     }
     routing {
         rateLimit {
             get("/") {
                 val requestsLeft = call.response.headers["X-RateLimit-Remaining"]
                 call.respondText("Ktor: ${Greeting().greet()},rate: $requestsLeft")
+            }
+        }
+        rateLimit(RateLimitName("api-v1")) {
+            get("/v1") {
+                val cookies = call.request.cookies.rawCookies
+                log.info("cookies : $cookies")
+                val requestsLeft = call.response.headers["X-RateLimit-Remaining"]
+                call.respondText("Ktor-v1: ${Greeting().greet()},rate: $requestsLeft")
+
             }
         }
     }
