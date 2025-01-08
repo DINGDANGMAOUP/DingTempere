@@ -18,6 +18,7 @@ kotlinx-coroutines = "1.9.0"
 ktor = "3.0.2"
 logback = "1.5.12"
 
+kermit="1.0.0"
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
@@ -43,7 +44,8 @@ ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "kto
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
 #     implementation("io.ktor:ktor-server-rate-limit:$ktor_version")
 ktor-server-rate-limit={module="io.ktor:ktor-server-rate-limit",version.ref="ktor"}
-
+#  implementation("co.touchlab:kermit:1.0.0")
+kermit={module="co.touchlab:kermit",version.ref="kermit"}
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
