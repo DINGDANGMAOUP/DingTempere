@@ -39,5 +39,10 @@ fun Application.module() {
 
             }
         }
+        rateLimit {
+            get("/userInfo"){
+                var headers = call.request.headers
+            }
+        }
     }
 }

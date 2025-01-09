@@ -62,7 +62,7 @@ fun getMsgData(num: Int): List<Message> {
 @Preview
 fun App() {
     DingTempereTheme {
-    MyLayout()
+    AppLayout()
 //        val msgData = getMsgData(100)
 //        converation(msgData)
 //        MessageCard(Message("dingdangmaoup","hello everyone"))

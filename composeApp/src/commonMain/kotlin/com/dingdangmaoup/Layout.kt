@@ -18,7 +18,7 @@ import androidx.compose.material.icons.filled.Close
 import kotlinx.coroutines.launch
 
 @Composable
-fun MyLayout() {
+fun AppLayout() {
     val scaffoldState = rememberScaffoldState()
     val scope=rememberCoroutineScope()
     Scaffold(
