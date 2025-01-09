@@ -78,6 +78,16 @@ kotlin {
 
             //            log
             implementation(libs.kermit)
+
+            //ui
+            implementation(libs.cupertino)
+            implementation(libs.cupertino.native)
+            implementation(libs.cupertino.adaptive)
+            implementation(libs.cupertino.decompose)
+            implementation(libs.cupertino.icons.extended)
+            //导航组件
+            implementation(libs.compose.navigation)
+
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)

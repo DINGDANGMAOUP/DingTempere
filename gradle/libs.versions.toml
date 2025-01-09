@@ -18,7 +18,11 @@ kotlinx-coroutines = "1.9.0"
 ktor = "3.0.2"
 logback = "1.5.12"
 
-kermit="1.0.0"
+#cupertino
+cupertino="0.1.0-alpha04"
+
+kermit="2.0.5"
+navigationCompose = "2.8.0-alpha11"
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
@@ -33,6 +37,9 @@ androidx-activity-compose = { module = "androidx.activity:activity-compose", ver
 androidx-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
 kotlinx-coroutines-swing = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
+compose-navigation = { group = "org.jetbrains.androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
+
+
 logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 ktor-server-core = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
 ktor-server-netty = { module = "io.ktor:ktor-server-netty-jvm", version.ref = "ktor" }
@@ -42,10 +49,17 @@ ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
-#     implementation("io.ktor:ktor-server-rate-limit:$ktor_version")
 ktor-server-rate-limit={module="io.ktor:ktor-server-rate-limit",version.ref="ktor"}
-#  implementation("co.touchlab:kermit:1.0.0")
+
+#log
 kermit={module="co.touchlab:kermit",version.ref="kermit"}
+
+#ui
+cupertino={module="io.github.alexzhirkevich:cupertino",version.ref="cupertino"}
+cupertino-native={module="io.github.alexzhirkevich:cupertino-native",version.ref="cupertino"}
+cupertino-adaptive={module="io.github.alexzhirkevich:cupertino-adaptive",version.ref="cupertino"}
+cupertino-decompose={module="io.github.alexzhirkevich:cupertino-decompose",version.ref="cupertino"}
+cupertino-icons-extended={module="io.github.alexzhirkevich:cupertino-icons-extended",version.ref="cupertino"}
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
